@@ -1,12 +1,13 @@
 pipeline:
-  backend:
-    image: python:3.6
+  conditional:
+    image: ubuntu:16.04
     commands:
+      - apt-get update -qq
+      - apt-get install -qq libldap-dev python3-dev
       - pip install -r requirements.txt
-      - pylint
-  frontend:
-    image: node:latest
-    commands:
+      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
+      - nvm install
+      - nvm use
       - npm install -g gulp
       - npm install
       - gulp production
