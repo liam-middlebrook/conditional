@@ -1,0 +1,12 @@
+pipeline:
+  backend:
+    image: python:3.6
+    commands:
+      - pip install -r requirements.txt
+      - pylint
+  frontend:
+    image: node:latest
+    commands:
+      - npm install -g gulp
+      - npm install
+      - gulp production
