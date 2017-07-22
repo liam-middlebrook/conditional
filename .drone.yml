@@ -3,7 +3,7 @@ pipeline:
     image: ubuntu:16.04
     commands:
       - apt-get update -qq
-      - apt-get install -qq libldap-dev python3-dev python3-pip libsasl2-dev
+      - apt-get install -qq libldap-dev python3-dev python3-pip libsasl2-dev curl
       - alias python=python3
       - alias pip=pip3
       - pip install -r requirements.txt
