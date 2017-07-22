@@ -5,7 +5,7 @@ pipeline:
       - apt-get update -qq
       - apt-get install -qq libldap-dev python3-dev python3-pip
       - alias python=python3
-      - alias python=pip3
+      - alias pip=pip3
       - pip install -r requirements.txt
       - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
       - nvm install
